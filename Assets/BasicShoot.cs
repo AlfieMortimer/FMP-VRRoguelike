@@ -4,11 +4,19 @@ using UnityEngine;
 using UnityEngine.Animations;
 public class BasicShoot : MonoBehaviour
 {
+
+    [Header("Stuff for shooting bullet")]
     public LayerMask Enemy;
-    Animator anim;
     public Transform shootposition;
     EnemyHealthscript enemyHealth;
     public playerStats playerStats;
+
+    [Header("animation stuff")]
+    public Animator anim;
+    public GameObject muzzleFlash;
+    public Transform barrelLocation;
+
+    private float destroyTimer = 2f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +31,18 @@ public class BasicShoot : MonoBehaviour
     }
     public void ShootWeapon()
     {
+        
+        //Create the muzzle flash
+        GameObject tempFlash;
+        tempFlash = Instantiate(muzzleFlash, barrelLocation.position, barrelLocation.rotation);
+
+        //Destroy the muzzle flash effect
+        Destroy(tempFlash, destroyTimer);
+        
+
+        anim.SetTrigger("shoot");
+        anim.ResetTrigger("shoot");
+
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
         //cam = position ray started
         // out RaycastHit hit stores what was hit
