@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerStats : MonoBehaviour
+public class enemyPathfinding : MonoBehaviour
 {
-    public float weaponDMG = 1;
-    public float maxAmmo = 20f;
+    // Start is called before the first frame update
     void Start()
     {
         
@@ -16,5 +15,4 @@ public class playerStats : MonoBehaviour
     {
         
     }
-
 }
