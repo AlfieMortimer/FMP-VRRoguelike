@@ -1,10 +1,16 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.XR.Interaction.Toolkit;
+
 public class BasicShoot : MonoBehaviour
 {
+    public GameObject socketObj;
+    public XRsocketinteractorTag Socket;
+    public ammoCapacity ammoscript;
 
     [Header("Stuff for shooting bullet")]
     public LayerMask Enemy;
@@ -12,7 +18,7 @@ public class BasicShoot : MonoBehaviour
     EnemyHealthscript enemyHealth;
     public playerStats playerStats;
     public float weaponAmmo = 1f;
-    private bool Magazine = false;
+    private bool magazineInGun = false;
     public float Chamber = 1f;
 
     [Header("animation stuff")]
@@ -20,17 +26,19 @@ public class BasicShoot : MonoBehaviour
     public GameObject muzzleFlash;
     public Transform barrelLocation;
 
-    
-    
 
     private float destroyTimer = 2f;
 
+    private void Start()
+    {
+        socketObj = GameObject.FindGameObjectWithTag("MagSocket");
+        Socket = socketObj.GetComponent<XRsocketinteractorTag>();
+    }
+
     public void ShootWeapon()
     {
-        if (Magazine == true)
+        if (magazineInGun == true)
         {
-            GameObject Current = GameObject.FindGameObjectWithTag("inClip");
-            ammoCapacity magAmmo = Current.GetComponentInParent<ammoCapacity>();
             if (weaponAmmo >= 1)
             {
                 Shoot();
@@ -38,7 +46,7 @@ public class BasicShoot : MonoBehaviour
                 if (weaponAmmo >= 1)
                 {
                     weaponAmmo--;
-                    magAmmo.ammoCount--;
+                    ammoscript.ammoCount--;
                     
                 }
             }
@@ -55,29 +63,28 @@ public class BasicShoot : MonoBehaviour
     }
     public void ammoLoaded()
     {
-        Magazine = false;
-        GameObject Current = GameObject.FindGameObjectWithTag("inClip");
-        print(Current.ToString());
-        if ( Current != null)
+        socketObj = GameObject.FindGameObjectWithTag("MagSocket");
+        Socket = socketObj.GetComponent<XRsocketinteractorTag>();
+        IXRSelectInteractable enteredMag = Socket.GetOldestInteractableSelected();
+        GameObject Magazine = enteredMag.transform.gameObject;
+        if ( enteredMag != null)
         {
-            ammoCapacity magAmmo = Current.GetComponentInParent<ammoCapacity>();
-            
-            print(magAmmo.ammoCount);
-            weaponAmmo = magAmmo.ammoCount;
-            Magazine = true;
+            ammoscript = enteredMag.transform.GetComponent<ammoCapacity>();
+
+            print(ammoscript.ammoCount);
+            weaponAmmo = ammoscript.ammoCount;
+            magazineInGun = true;
         }
     }
     public void ammoUnloaded()
     {
-        GameObject Current = GameObject.FindGameObjectWithTag("inClip");
-        ammoCapacity magAmmo = Current.GetComponentInParent<ammoCapacity>();
         if (weaponAmmo >= 1 && Chamber <= 0)
             {
                 Chamber = 1;
-                weaponAmmo--;
-                magAmmo.ammoCount--;
+                weaponAmmo = 0;
+                ammoscript.ammoCount--;
             }
-
+        magazineInGun = false;
     }
     public void Shoot()
     {

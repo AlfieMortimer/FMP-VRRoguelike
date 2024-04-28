@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 8826187510634494208}
   m_Layer: 7
   m_Name: Ammo Slot Area
-  m_TagString: Untagged
+  m_TagString: MagSocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 4294967295
   m_AttachTransform: {fileID: 1212010869316371925}
-  m_KeepSelectedTargetValid: 1
+  m_KeepSelectedTargetValid: 0
   m_DisableVisualsWhenBlockedInGroup: 1
   m_StartingSelectedInteractable: {fileID: 0}
   m_StartingTargetFilter: {fileID: 0}
@@ -283,9 +283,9 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7112191634535385616}
-        m_TargetAssemblyTypeName: BasicShoot, Assembly-CSharp
-        m_MethodName: ammoLoaded
+      - m_Target: {fileID: 5323167194067561786}
+        m_TargetAssemblyTypeName: MagazineCollisionFix, Assembly-CSharp
+        m_MethodName: layerEnter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -295,9 +295,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MagazineCollisionFix, Assembly-CSharp
-        m_MethodName: layerEnter
+      - m_Target: {fileID: 7112191634535385616}
+        m_TargetAssemblyTypeName: BasicShoot, Assembly-CSharp
+        m_MethodName: ammoLoaded
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -322,7 +322,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5323167194067561786}
         m_TargetAssemblyTypeName: MagazineCollisionFix, Assembly-CSharp
         m_MethodName: layerExit
         m_Mode: 1
@@ -359,7 +359,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  targetTag: FNMag
+  targetTag: MAG
 --- !u!1 &1780130996049796347
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +396,8 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5140163204497441637}
+  - {fileID: 1487485977947120901}
   - {fileID: 5507880642444612564}
   - {fileID: 2257407537526127612}
   - {fileID: 711628519536405445}
@@ -407,7 +409,6 @@ Transform:
   - {fileID: 3861906499023207951}
   - {fileID: 1194564115738198323}
   - {fileID: 240714140836749765}
-  - {fileID: 1487485977947120901}
   - {fileID: 1212010869316371925}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -702,12 +703,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0786a7044454d4e805dc0cf2743847, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  socketObj: {fileID: 0}
+  Socket: {fileID: 0}
+  ammoscript: {fileID: 0}
   Enemy:
     serializedVersion: 2
     m_Bits: 8
   shootposition: {fileID: 240714140836749765}
   playerStats: {fileID: 0}
-  ammoCount: 1
+  weaponAmmo: 1
+  Chamber: 1
   anim: {fileID: 6078779849071781476}
   muzzleFlash: {fileID: 1782395880954752, guid: 31f6525bb9d5e6e4bade30024fa73b10, type: 3}
   barrelLocation: {fileID: 240714140836749765}
@@ -735,13 +740,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2413234646593967327}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -0.388, y: 0.027, z: 1.139}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.38799286, y: 0.026999712, z: 1.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4900214460721872279}
-  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2424207533821763047
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +888,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4308120262253404547}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5060568, y: 0.49386832, z: 0.4938687, w: 0.50605756}
+  m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -0.568437, y: 0.8606683, z: 1.1461599}
   m_LocalScale: {x: 6.387382, y: 6.3873816, z: 4.2360334}
   m_ConstrainProportionsScale: 0
@@ -891,7 +896,7 @@ Transform:
   - {fileID: 9188065307533244518}
   - {fileID: 8582542171144961686}
   m_Father: {fileID: 4900214460721872279}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 90}
 --- !u!33 &1265665417246161589
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1237,6 +1242,54 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.023465976, y: 0.002, z: 0.0017782687}
   m_Center: {x: -0.057560354, y: -0.0003029561, z: 0.0001396901}
+--- !u!1 &6228337658958680293
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5140163204497441637}
+  - component: {fileID: 5323167194067561786}
+  m_Layer: 7
+  m_Name: MagazineTagSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5140163204497441637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228337658958680293}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4900214460721872279}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5323167194067561786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228337658958680293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b288990225b1c1a4b9366e78b8154b1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  socketObj: {fileID: 1329450581869760424}
+  ammoscript: {fileID: 0}
+  Socket: {fileID: 8826187510634494208}
+  Magazine: {fileID: 0}
 --- !u!1 &6479138226592566079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1386,7 @@ GameObject:
   - component: {fileID: 4040797823174387970}
   - component: {fileID: 7965822038821608796}
   m_Layer: 7
-  m_Name: fal trigga
+  m_Name: fal trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,7 +1550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5507880642444612564}
   m_Layer: 7
-  m_Name: Grip Location
+  m_Name: Primary Grip Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
