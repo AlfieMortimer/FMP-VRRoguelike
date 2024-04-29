@@ -10,6 +10,8 @@ public class ammoCapacity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameObject player = GameObject.FindWithTag("player");
+        Stats = player.GetComponent<playerStats>();
         ammoCount = Stats.maxAmmo;
         print(ammoCount);
     }
