@@ -1458,12 +1458,12 @@ GameObject:
   - component: {fileID: 1411632121424565445}
   - component: {fileID: 4722905848113636265}
   - component: {fileID: 2571200434391476576}
+  - component: {fileID: 7270704675509664256}
   - component: {fileID: 190996297588872456}
   - component: {fileID: 3540554020375960754}
-  - component: {fileID: 7270704675509664256}
   m_Layer: 8
   m_Name: XR Origin (XR Rig)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1610,6 +1610,21 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!114 &7270704675509664256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8166550262288120051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LocomotionProvider: {fileID: 4722905848113636265}
+  m_MinHeight: 0
+  m_MaxHeight: Infinity
 --- !u!143 &190996297588872456
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1650,21 +1665,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponDMG: 1
   maxAmmo: 20
---- !u!114 &7270704675509664256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166550262288120051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_LocomotionProvider: {fileID: 4722905848113636265}
-  m_MinHeight: 0
-  m_MaxHeight: Infinity
 --- !u!1 &8903489926315284503
 GameObject:
   m_ObjectHideFlags: 0

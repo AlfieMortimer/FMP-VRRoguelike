@@ -10,7 +10,7 @@ public class enemyPathfinding : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("playerTargetPos");
         agent = GetComponent<NavMeshAgent>();
     }
 

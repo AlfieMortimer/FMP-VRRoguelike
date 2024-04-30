@@ -33,6 +33,8 @@ public class BasicShoot : MonoBehaviour
     {
         socketObj = GameObject.FindGameObjectWithTag("MagSocket");
         Socket = socketObj.GetComponent<XRsocketinteractorTag>();
+        GameObject player = GameObject.FindWithTag("Player");
+        playerStats = player.GetComponent<playerStats>();
     }
 
     public void ShootWeapon()

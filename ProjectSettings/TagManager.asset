@@ -8,6 +8,10 @@ TagManager:
   - MAG
   - FNMag
   - MagSocket
+  - Damage
+  - playerTargetPos
+  - Enemy
+  - Handler
   layers:
   - Default
   - TransparentFX
@@ -19,7 +23,7 @@ TagManager:
   - Grab Interactable
   - Player
   - Magazine
-  - 
+  - Target
   - 
   - 
   - 

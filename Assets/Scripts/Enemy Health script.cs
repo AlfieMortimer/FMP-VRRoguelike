@@ -5,9 +5,6 @@ using UnityEngine;
 public class EnemyHealthscript : MonoBehaviour
 {
     public float health;
-    playerStats stats;
-    BasicShoot shot;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +16,11 @@ public class EnemyHealthscript : MonoBehaviour
     {
         if (health <= 0)
         {
+            
             //in future play animation which will edit level objectives and then kill itself
             Destroy(gameObject);
         }
     }
+
 
 }
