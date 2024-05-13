@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7855832300458635570}
   - component: {fileID: 4089639161090526536}
   - component: {fileID: 8158752094206047033}
+  - component: {fileID: 3481928932985141922}
   m_Layer: 10
   m_Name: Enemy Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -104,6 +105,19 @@ MonoBehaviour:
   largeEnemy: {fileID: 1021192334197550383, guid: f7996363bf11f87478741955346dfa85, type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
   rand: 0
+--- !u!114 &3481928932985141922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332029699442463434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a4b4a57aa0112146a00c000c48118f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 25
 --- !u!1 &3700281359429646564
 GameObject:
   m_ObjectHideFlags: 0

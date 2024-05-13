@@ -12,6 +12,8 @@ TagManager:
   - playerTargetPos
   - Enemy
   - Handler
+  - Spawner
+  - capture
   layers:
   - Default
   - TransparentFX
