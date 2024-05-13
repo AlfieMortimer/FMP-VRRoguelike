@@ -18,7 +18,7 @@ public class enemyHandler : MonoBehaviour
     {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         spawners = GameObject.FindGameObjectsWithTag("Spawner");
-        captureZone = GameObject.FindGameObjectsWithTag("Capture");
+        captureZone = GameObject.FindGameObjectsWithTag("capture");
         foreach (GameObject enemy in enemies)
         {
             enemyCount++;
