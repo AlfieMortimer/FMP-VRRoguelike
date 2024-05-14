@@ -32,6 +32,6 @@ public class enemyHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
