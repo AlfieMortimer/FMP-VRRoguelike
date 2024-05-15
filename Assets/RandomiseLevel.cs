@@ -38,9 +38,9 @@ public class RandomiseLevel : MonoBehaviour
     {
         LevelManagerfinder = GameObject.FindGameObjectWithTag("LevelManager");
         LM = LevelManagerfinder.GetComponent<levelManager>();
-        Stage = Random.Range(0, 6);
-        levelType = Random.Range(0, 4);
-        Difficulty = Random.Range(0, 4);
+        Stage = Random.Range(1, 5);
+        levelType = Random.Range(1, 3);
+        Difficulty = Random.Range(1, 3);
         RandPrint();
     }
 

@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class levelManager : MonoBehaviour
 {
+    public AudioClip Victory;
+    public AudioClip LVLM1;
+    public AudioClip LVLM2;
+    public AudioClip LVLM3;
+
+
     enemyHandler eH;
+
+    public soundManager soundManager;
 
     public GameObject player;
     public Vector3 playerCoord;
@@ -15,6 +24,8 @@ public class levelManager : MonoBehaviour
     public float objectivetype;
     public float Difficulty;
 
+    public GameObject floornum;
+    public float floorsClear;
 
     public GameObject captureZone;
     public captureZone zone;
@@ -45,7 +56,7 @@ public class levelManager : MonoBehaviour
 
     void Update()
     {
-        if(SceneManager.GetActiveScene().name != "LevelBreakRoom" && eH == null)
+        if (SceneManager.GetActiveScene().name != "LevelBreakRoom" && eH == null)
         {
             levelLoaded();
         }
@@ -58,7 +69,7 @@ public class levelManager : MonoBehaviour
                 print(captureZone);
                 zone = captureZone.GetComponent<captureZone>();
             }
-            
+
         }
 
         if (SceneManager.GetActiveScene().name != "LevelBreakRoom")
@@ -76,55 +87,42 @@ public class levelManager : MonoBehaviour
                 levelComplete();
             }
         }
-        
+
     }
     private void levelLoaded()
     {
         player = GameObject.FindWithTag("Player");
         GameObject handlerOBJ = GameObject.FindWithTag("Handler");
-        if(handlerOBJ != null)
+        if (handlerOBJ != null)
         {
             eH = handlerOBJ.GetComponent<enemyHandler>();
 
         }
         player.transform.position = playerCoord;
-
+        TextMeshPro numTextBox = floornum.GetComponent<TextMeshPro>();
+        numTextBox.text = ("Floor: " + floorsClear);
     }
     private void levelComplete()
     {
-        level++;
         //Play win animation before load scene
         SceneManager.LoadScene("LevelBreakRoom");
         objectivetype = 0;
         eH = null;
+
+        floornum = GameObject.FindGameObjectWithTag("FloorNum");
+        TextMeshPro numTextBox = floornum.GetComponent<TextMeshPro>();
+        numTextBox.text = ("Floor: " + floorsClear);
+        soundManager.stopmusic();
+        soundManager.playMusic(Victory);
     }
     public void LevelLoad()
     {
-        if(level == 1)
-        {
-            SceneManager.LoadScene("Test 1");
-        }
-        if (level == 2)
-        {
-            SceneManager.LoadScene("Test 2");
-        }
-        if (level == 3)
-        {
-            SceneManager.LoadScene("Test 3");
-        }
-        if (level == 4)
-        {
-            SceneManager.LoadScene("Test 4");
-        }
-        if (level == 5)
-        {
-            SceneManager.LoadScene("Test 5");
-        }
-        else if(level >= 6 || level <= 0)
-        {
-            SceneManager.LoadScene("LevelBreakRoom");
-        }
+        string levelname = ("Test " + level);
 
+        soundManager.playMusic(LVLM1);
 
+        SceneManager.LoadScene(levelname);
+        floorsClear++;
     }
+
 }

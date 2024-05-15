@@ -15,6 +15,7 @@ TagManager:
   - Spawner
   - capture
   - LevelManager
+  - FloorNum
   layers:
   - Default
   - TransparentFX
