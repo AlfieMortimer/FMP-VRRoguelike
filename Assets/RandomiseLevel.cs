@@ -1,32 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class RandomiseLevel : MonoBehaviour
 {
-    public TextMeshPro levelNameAndDifficultyText;
-    public TextMeshPro difficultyText;
+    public GameObject LVLNameObj;
+    public GameObject LVLDifficultyObj;
+    TextMeshProUGUI levelNameAndDifficultyText;
+    TextMeshProUGUI difficultyText;
     public Animator Dooranim;
     public GameObject Player;
 
 
-    public string levelName;
-    public string levelTypeName;
-
     GameObject LevelManagerfinder;
     levelManager LM;
 
-    public float Stage;
+    public int Stage;
     //stages 1-5 (for now)
 
-    public float levelType;
+    public int levelType;
     //Type 1 - Defeat Enemies
     //Type 2 - Destroy Spawners
     //Type 3 - Capture Point
 
-    public float Difficulty;
+    public int Difficulty;
     //Difficulty 1 - Easy - less Enemies spawn and have less HP
     //Difficulty 2 - Normal - Base enemy spawns with normal HP
     //Difficulty 3 - Hard - Increased enemy spawns with larger health pools
@@ -36,12 +35,25 @@ public class RandomiseLevel : MonoBehaviour
 
     void Start()
     {
+        string[] levelnames = { "Ignore", "Test1", "Test2", "Test3", "Test4", "Test5" };
+        string[] objectiveNames = { "Ignore", "DefeatEnemies", "DestroySpawners", "CaptureZones" };
+        string[] difficultynames = { "Ignore", "Easy", "Medium", "Hard" };
+
+        levelNameAndDifficultyText = LVLNameObj.GetComponent<TextMeshProUGUI>();
+        print("name:"+levelNameAndDifficultyText);
+        difficultyText = LVLDifficultyObj.GetComponent<TextMeshProUGUI>();
+        print("Diff "+ difficultyText);
+
         LevelManagerfinder = GameObject.FindGameObjectWithTag("LevelManager");
         LM = LevelManagerfinder.GetComponent<levelManager>();
-        Stage = Random.Range(1, 5);
-        levelType = Random.Range(1, 3);
-        Difficulty = Random.Range(1, 3);
-        RandPrint();
+        Stage = UnityEngine.Random.Range(1, 5);
+        levelType = UnityEngine.Random.Range(1, 3);
+        Difficulty = UnityEngine.Random.Range(1, 3);
+
+        levelNameAndDifficultyText.text = levelnames[Stage] + "_" + objectiveNames[levelType];
+        difficultyText.text = difficultynames[Difficulty];
+
+        
     }
 
     public void RandPrint()
@@ -53,7 +65,6 @@ public class RandomiseLevel : MonoBehaviour
 
     public void SendToLM()
     {
-        print("Level: " + levelType);
         LM.playerCoord = Player.transform.position;
         LM.level = Stage;
         LM.objectivetype = levelType;

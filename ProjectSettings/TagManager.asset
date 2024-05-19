@@ -16,6 +16,8 @@ TagManager:
   - capture
   - LevelManager
   - FloorNum
+  - AmmoSocket
+  - FloorNum2
   layers:
   - Default
   - TransparentFX

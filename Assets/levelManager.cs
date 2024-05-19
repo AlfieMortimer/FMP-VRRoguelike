@@ -24,7 +24,12 @@ public class levelManager : MonoBehaviour
     public float objectivetype;
     public float Difficulty;
 
-    public GameObject floornum;
+    public GameObject floornumObj;
+    public GameObject floornumObj2;
+
+    public TextMeshPro floornum;
+    public TextMeshPro floornum2;
+
     public float floorsClear;
 
     public GameObject captureZone;
@@ -98,9 +103,24 @@ public class levelManager : MonoBehaviour
             eH = handlerOBJ.GetComponent<enemyHandler>();
 
         }
-        player.transform.position = playerCoord;
-        TextMeshPro numTextBox = floornum.GetComponent<TextMeshPro>();
-        numTextBox.text = ("Floor: " + floorsClear);
+        if(SceneManager.GetActiveScene().name != "Death")
+        {
+            print(SceneManager.GetActiveScene().name);
+            player.transform.position = playerCoord;
+            floornumObj.SetActive(true);
+            floornumObj2.SetActive(true);
+        }
+        if (SceneManager.GetActiveScene().name == "Death" || SceneManager.GetActiveScene().name == "Menu")
+        {
+            floornumObj.SetActive(false);
+            floornumObj2.SetActive(false);
+
+        }
+        TextMeshPro floornum = floornumObj.GetComponent<TextMeshPro>();
+        TextMeshPro floornum2 = floornumObj2.GetComponent<TextMeshPro>();
+
+        floornum.text = ("Floor: " + floorsClear);
+        floornum2.text = ("Floor: " + floorsClear);
     }
     private void levelComplete()
     {
@@ -109,17 +129,19 @@ public class levelManager : MonoBehaviour
         objectivetype = 0;
         eH = null;
 
-        floornum = GameObject.FindGameObjectWithTag("FloorNum");
-        TextMeshPro numTextBox = floornum.GetComponent<TextMeshPro>();
-        numTextBox.text = ("Floor: " + floorsClear);
+        TextMeshPro floornum = floornumObj.GetComponent<TextMeshPro>();
+        TextMeshPro floornum2 = floornumObj2.GetComponent<TextMeshPro>();
+
+        floornum.text = ("Floor: " + floorsClear);
+        floornum2.text = ("Floor: " + floorsClear);
         soundManager.stopmusic();
         soundManager.playMusic(Victory);
     }
     public void LevelLoad()
     {
         string levelname = ("Test " + level);
-
-        soundManager.playMusic(LVLM1);
+        soundManager.stopmusic();
+        soundManager.playMusic(LVLM2);
 
         SceneManager.LoadScene(levelname);
         floorsClear++;
