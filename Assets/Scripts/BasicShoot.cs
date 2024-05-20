@@ -11,6 +11,7 @@ public class BasicShoot : MonoBehaviour
     public GameObject socketObj;
     public XRsocketinteractorTag Socket;
     public ammoCapacity ammoscript;
+    public soundManager sM;
 
     [Header("Stuff for shooting bullet")]
     public LayerMask Enemy;
@@ -20,6 +21,7 @@ public class BasicShoot : MonoBehaviour
     public float weaponAmmo = 1f;
     private bool magazineInGun = false;
     public float Chamber = 1f;
+    public AudioClip Gunshot;
 
     [Header("animation stuff")]
     public Animator anim;
@@ -35,6 +37,7 @@ public class BasicShoot : MonoBehaviour
         Socket = socketObj.GetComponent<XRsocketinteractorTag>();
         GameObject player = GameObject.FindWithTag("Player");
         playerStats = player.GetComponent<playerStats>();
+        sM = GameObject.FindWithTag("audiomanager").GetComponent<soundManager>();
     }
 
     public void ShootWeapon()
@@ -93,6 +96,8 @@ public class BasicShoot : MonoBehaviour
         //Create the muzzle flash
         GameObject tempFlash;
         tempFlash = Instantiate(muzzleFlash, barrelLocation.position, barrelLocation.rotation);
+
+        sM.playsfx(Gunshot);
 
         //Destroy the muzzle flash effect
         Destroy(tempFlash, destroyTimer);

@@ -100,9 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handler: {fileID: 0}
   spawnPosOBJ: {fileID: 2332029699442463434}
-  smallEnemy: {fileID: 3512196735343399093, guid: 8cf66cf504140a444bafc350124dc6e6, type: 3}
+  smallEnemy: {fileID: 8193327187896958904, guid: 0ee1636cdb0d9554381d5a01149e0b51, type: 3}
   mediumEnemy: {fileID: 0}
-  largeEnemy: {fileID: 1021192334197550383, guid: f7996363bf11f87478741955346dfa85, type: 3}
+  largeEnemy: {fileID: 1110986990277464958, guid: 0e1a4234f1157da4e9f087b6c5f4220a, type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
   rand: 0
 --- !u!114 &3481928932985141922

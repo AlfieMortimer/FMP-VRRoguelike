@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 
 public class levelManager : MonoBehaviour
 {
+    public AudioClip MenuMusic;
+    public AudioClip LiftMusic;
     public AudioClip Victory;
-    public AudioClip LVLM1;
-    public AudioClip LVLM2;
-    public AudioClip LVLM3;
+    public AudioClip[] LVLM;
 
 
     enemyHandler eH;
@@ -22,7 +22,7 @@ public class levelManager : MonoBehaviour
 
     public float level;
     public float objectivetype;
-    public float Difficulty;
+    public int Difficulty;
 
     public GameObject floornumObj;
     public GameObject floornumObj2;
@@ -34,6 +34,8 @@ public class levelManager : MonoBehaviour
 
     public GameObject captureZone;
     public captureZone zone;
+
+    public bool Poschanged;
     //Value 0 is base for home
     //Objective 1 = Kill all enemies
     //Objective 2 = Destroy all spawners
@@ -61,7 +63,7 @@ public class levelManager : MonoBehaviour
 
     void Update()
     {
-        if (SceneManager.GetActiveScene().name != "LevelBreakRoom" && eH == null)
+        if (SceneManager.GetActiveScene().name != "LevelBreakRoom" && eH == null || SceneManager.GetActiveScene().name != "Start" && eH == null)
         {
             levelLoaded();
         }
@@ -103,14 +105,19 @@ public class levelManager : MonoBehaviour
             eH = handlerOBJ.GetComponent<enemyHandler>();
 
         }
-        if(SceneManager.GetActiveScene().name != "Death")
+        if(SceneManager.GetActiveScene().name != "Death" && Poschanged == false|| SceneManager.GetActiveScene().name != "Start" && Poschanged == false)
         {
-            print(SceneManager.GetActiveScene().name);
             player.transform.position = playerCoord;
             floornumObj.SetActive(true);
             floornumObj2.SetActive(true);
+            Poschanged = true;
         }
-        if (SceneManager.GetActiveScene().name == "Death" || SceneManager.GetActiveScene().name == "Menu")
+        if(SceneManager.GetActiveScene().name == "LevelBreakRoom" && floornumObj.activeInHierarchy == false)
+        {
+            floornumObj.SetActive(true);
+            floornumObj2.SetActive(true);
+        }
+        if (SceneManager.GetActiveScene().name == "Death" || SceneManager.GetActiveScene().name == "Start")
         {
             floornumObj.SetActive(false);
             floornumObj2.SetActive(false);
@@ -136,12 +143,13 @@ public class levelManager : MonoBehaviour
         floornum2.text = ("Floor: " + floorsClear);
         soundManager.stopmusic();
         soundManager.playMusic(Victory);
+        Poschanged = true;
     }
     public void LevelLoad()
     {
-        string levelname = ("Test " + level);
+        string levelname = ("LVL" + level);
         soundManager.stopmusic();
-        soundManager.playMusic(LVLM2);
+        soundManager.playMusic(LVLM[Difficulty]);
 
         SceneManager.LoadScene(levelname);
         floorsClear++;

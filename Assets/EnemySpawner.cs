@@ -24,32 +24,35 @@ public class EnemySpawner : MonoBehaviour
 
     void spawnEnemy()
     {
-        rand = Random.Range(0, 3);
-        if (rand == 0)
+        if (gameObject.activeInHierarchy)
         {
-            Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-            Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-            Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-            Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-            Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-            print("Small Spawned");
-            handler.enemyCount += 5;
-        }
-        else if (rand == 1)
-        {
-            print("Medium spawned");
-            handler.enemyCount += 2;
-        }
-        else
-        {
-            Instantiate(largeEnemy, spawnPos, Quaternion.identity);
-            print("Large Spawned");
-            handler.enemyCount += 1;
+            rand = Random.Range(0, 3);
+            if (rand == 0)
+            {
+                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
+                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
+                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
+                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
+                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
+                print("Small Spawned");
+                handler.enemyCount += 5;
+            }
+            else if (rand == 1)
+            {
+                print("Medium spawned");
+                handler.enemyCount += 2;
+            }
+            else
+            {
+                Instantiate(largeEnemy, spawnPos, Quaternion.identity);
+                print("Large Spawned");
+                handler.enemyCount += 1;
+            }
+
+            wait();
         }
 
-        wait();
     }
-
     void wait()
     {
         Invoke("spawnEnemy", 15f);

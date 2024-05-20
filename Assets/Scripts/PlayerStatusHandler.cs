@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using UnityEngine.Audio;
 public class PlayerStatusHandler : MonoBehaviour
 {
     public float Health = 100f;
@@ -11,9 +11,12 @@ public class PlayerStatusHandler : MonoBehaviour
     public GameObject HealthUI;
     public Image HealthIndicator;
     public Color Healthopacity;
+    soundManager SM;
+    public Animator Anim;
         // Start is called before the first frame update
     void Start()
     {
+        SM = GameObject.FindWithTag("audiomanager").GetComponent<soundManager>();
         HealthIndicator = HealthUI.GetComponent<Image>();
     }
     // Update is called once per frame
@@ -30,8 +33,8 @@ public class PlayerStatusHandler : MonoBehaviour
     }
     void Death()
     {
-        //CHANGE LATER - TESTING PURPOSES ONLY
         SceneManager.LoadScene("Death");
+        SM.stopmusic();
     }
 
     

@@ -46,9 +46,9 @@ public class RandomiseLevel : MonoBehaviour
 
         LevelManagerfinder = GameObject.FindGameObjectWithTag("LevelManager");
         LM = LevelManagerfinder.GetComponent<levelManager>();
-        Stage = UnityEngine.Random.Range(1, 5);
-        levelType = UnityEngine.Random.Range(1, 3);
-        Difficulty = UnityEngine.Random.Range(1, 3);
+        Stage = UnityEngine.Random.Range(1, 6);
+        levelType = UnityEngine.Random.Range(1, 4);
+        Difficulty = UnityEngine.Random.Range(1, 4);
 
         levelNameAndDifficultyText.text = levelnames[Stage] + "_" + objectiveNames[levelType];
         difficultyText.text = difficultynames[Difficulty];

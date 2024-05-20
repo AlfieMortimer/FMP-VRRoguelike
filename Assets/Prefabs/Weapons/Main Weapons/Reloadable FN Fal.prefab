@@ -706,6 +706,7 @@ MonoBehaviour:
   socketObj: {fileID: 0}
   Socket: {fileID: 0}
   ammoscript: {fileID: 0}
+  sM: {fileID: 0}
   Enemy:
     serializedVersion: 2
     m_Bits: 8
@@ -713,6 +714,7 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   weaponAmmo: 1
   Chamber: 1
+  Gunshot: {fileID: 8300000, guid: 7b688870827d1a74f8aef4ee89698187, type: 3}
   anim: {fileID: 6078779849071781476}
   muzzleFlash: {fileID: 1782395880954752, guid: 31f6525bb9d5e6e4bade30024fa73b10, type: 3}
   barrelLocation: {fileID: 240714140836749765}
