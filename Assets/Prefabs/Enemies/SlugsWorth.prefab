@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 792407332848327053}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8515819917588352783}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.Mid1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8845587611054713406}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.11_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 828691500435654656}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.09_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,9 +142,9 @@ GameObject:
   - component: {fileID: 2687644702850874490}
   - component: {fileID: 5960547369024118507}
   - component: {fileID: 3741636253488635250}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SlugsWorth
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,7 +159,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.272947, y: 3.41, z: -13.3778515}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.8000001, y: 0.8, z: 0.8000001}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5867907134271514167}
@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  damage: 20
 --- !u!114 &2687644702850874490
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cda81309fe84cb46a90e23f359d0cf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
 --- !u!54 &5960547369024118507
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -296,6 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab38c2b167ea31d449c838b589e4eba8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 1110986990277464958}
 --- !u!1 &1377319045073212063
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4898379264477319738}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.Mid2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +340,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 678231396028044809}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7282378053971238821}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -403,7 +406,7 @@ GameObject:
   - component: {fileID: 8103130855104442980}
   - component: {fileID: 9078320846322778456}
   - component: {fileID: 2515195744959435230}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -486,7 +489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2931192077862475531}
   - component: {fileID: 7689345979765543085}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Mark Three And A Half.5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +587,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4274523423496943288}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.Mid4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1430430183236588679}
   - component: {fileID: 9008717994097028081}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttackHitbox
   m_TagString: Damage
   m_Icon: {fileID: 0}
@@ -669,7 +672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164484673021328794}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -701,7 +704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5867907134271514167}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2844899999880109021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -765,7 +768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765997254234912731}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.06_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -796,7 +799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8652209876195344454}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.End1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +831,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6578414327054170105}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +865,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7503876485699423828}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.Mid3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -896,7 +899,7 @@ GameObject:
   - component: {fileID: 9018867700626441939}
   - component: {fileID: 1266957772934563267}
   - component: {fileID: 8616437124073150486}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -977,7 +980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3608898262404464511}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bone.02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

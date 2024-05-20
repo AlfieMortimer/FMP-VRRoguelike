@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4089639161090526536}
   - component: {fileID: 8158752094206047033}
   - component: {fileID: 3481928932985141922}
-  m_Layer: 10
+  m_Layer: 3
   m_Name: Enemy Spawner
   m_TagString: Spawner
   m_Icon: {fileID: 0}
@@ -100,8 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handler: {fileID: 0}
   spawnPosOBJ: {fileID: 2332029699442463434}
-  smallEnemy: {fileID: 8193327187896958904, guid: 0ee1636cdb0d9554381d5a01149e0b51, type: 3}
-  mediumEnemy: {fileID: 0}
+  smallEnemy: {fileID: 2005254866745818457, guid: 7e264047e0b717748bb25bfd518444f4, type: 3}
+  mediumEnemy: {fileID: 6629758799368622010, guid: fddea501751c6444485d706df99f0448, type: 3}
   largeEnemy: {fileID: 1110986990277464958, guid: 0e1a4234f1157da4e9f087b6c5f4220a, type: 3}
   spawnPos: {x: 0, y: 0, z: 0}
   rand: 0
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4806573942046129058}
   - component: {fileID: 2644888620855345589}
   - component: {fileID: 2150406759129398398}
-  m_Layer: 10
+  m_Layer: 3
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

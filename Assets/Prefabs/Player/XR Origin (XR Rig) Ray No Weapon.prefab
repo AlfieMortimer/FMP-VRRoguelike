@@ -576,19 +576,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 4423962345716767570}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_UIHoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -601,19 +588,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4423962345716767570}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1314,19 +1288,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 3447044142873618707}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_UIHoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -1339,19 +1300,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3447044142873618707}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2121,8 +2069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
-  HealthUI: {fileID: 3734546966061542395}
-  HealthIndicator: {fileID: 5919077730733513361}
+  HealthUI: {fileID: 0}
+  HealthIndicator: {fileID: 0}
   Healthopacity: {r: 0, g: 0, b: 0, a: 0}
   Anim: {fileID: 7889812593829367835}
 --- !u!1001 &114357822436694182
@@ -2226,27 +2174,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95136c1c557fa740a41f2988a8942b3, type: 3}
---- !u!1 &3734546966061542395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3622443830818386781, guid: d95136c1c557fa740a41f2988a8942b3, type: 3}
-  m_PrefabInstance: {fileID: 114357822436694182}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4168430560336001723 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4057596303433392669, guid: d95136c1c557fa740a41f2988a8942b3, type: 3}
   m_PrefabInstance: {fileID: 114357822436694182}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5919077730733513361 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6031038983900463671, guid: d95136c1c557fa740a41f2988a8942b3, type: 3}
-  m_PrefabInstance: {fileID: 114357822436694182}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3734546966061542395}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &7889812593829367835 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7847655485556263101, guid: d95136c1c557fa740a41f2988a8942b3, type: 3}

@@ -36,6 +36,13 @@ public class PlayerStatusHandler : MonoBehaviour
         SceneManager.LoadScene("Death");
         SM.stopmusic();
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Damage")
+        {
+            EnemyHealthscript EHS = other.GetComponentInParent<EnemyHealthscript>();
+            Health -= EHS.damage;
+        }
+    }
 
-    
 }

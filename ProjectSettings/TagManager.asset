@@ -19,6 +19,7 @@ TagManager:
   - AmmoSocket
   - FloorNum2
   - audiomanager
+  - Gun
   layers:
   - Default
   - TransparentFX
