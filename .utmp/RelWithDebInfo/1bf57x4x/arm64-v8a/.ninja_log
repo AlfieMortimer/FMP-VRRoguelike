@@ -1,0 +1,5 @@
+# ninja log v5
+3	207	7380056931934467	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b69dafef1be3d7ce
+207	462	7380056934067526	C:/temp/Alfie/FMP-VRRoguelike/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1bf57x4x/obj/arm64-v8a/libswappywrapper.so	449362c985317577
+3	209	7380059983782953	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	b69dafef1be3d7ce
+209	402	7380059985388208	C:/temp/Alfie/FMP-VRRoguelike/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/1bf57x4x/obj/arm64-v8a/libswappywrapper.so	449362c985317577
