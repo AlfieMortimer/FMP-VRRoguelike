@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9607e5bf60fdac49b94970441d2389a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 100
+  Health: 200
   HealthUI: {fileID: 0}
   HealthIndicator: {fileID: 0}
   Healthopacity: {r: 0, g: 0, b: 0, a: 0}

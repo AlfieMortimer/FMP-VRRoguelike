@@ -545,19 +545,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 2051121799638977814}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_UIHoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -570,19 +557,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2051121799638977814}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -756,6 +730,7 @@ GameObject:
   - component: {fileID: 5988391922887083746}
   - component: {fileID: 1949593266617508965}
   - component: {fileID: 1372203555633172709}
+  - component: {fileID: 3200364402858550942}
   m_Layer: 8
   m_Name: XR Origin (XR Rig) Ray
   m_TagString: Player
@@ -978,6 +953,29 @@ MonoBehaviour:
   HealthIndicator: {fileID: 7292281077973574137}
   Healthopacity: {r: 0, g: 0, b: 0, a: 0}
   Anim: {fileID: 6514901151521663859}
+--- !u!136 &3200364402858550942
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2735711115365671695}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 8
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3062285267849513026
 GameObject:
   m_ObjectHideFlags: 0
@@ -1038,7 +1036,7 @@ Transform:
   m_GameObject: {fileID: 4101629682790633939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0229, y: -0.009000063, z: -0.01}
+  m_LocalPosition: {x: 0.0372, y: -0.009000063, z: -0.0724}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1902,19 +1900,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 996027702149994660}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 10
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   m_UIHoverExited:
     m_PersistentCalls:
       m_Calls:
@@ -1927,19 +1912,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 996027702149994660}
-        m_TargetAssemblyTypeName: UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual,
-          Unity.XR.Interaction.Toolkit
-        m_MethodName: set_lineLength
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0.1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1959,7 +1931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e988983f96fe1dd48800bcdfc82f23e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LineWidth: 0.005
+  m_LineWidth: 0.01
   m_OverrideInteractorLineLength: 1
   m_LineLength: 10
   m_AutoAdjustLineLength: 0
@@ -2490,23 +2462,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 352821498552670963, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 376613102236963334, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 442719157658936460, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1329450581869760424, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1696872923856136683, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_InteractionLayers.m_Bits
-      value: 4294967295
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1780130996049796347, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Name
@@ -2516,25 +2488,29 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1780130996049796347, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
+      propertyPath: m_TagString
+      value: Gun
+      objectReference: {fileID: 0}
     - target: {fileID: 2413234646593967327, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2424207533821763047, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3036145182961373211, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4308120262253404547, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4824939500070707101, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4900214460721872279, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_LocalScale.x
@@ -2590,27 +2566,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5203741502424880346, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5619310761702748465, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6228337658958680293, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6479138226592566079, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6763650868560777503, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7097548528984389895, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7112191634535385616, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: socketObj
@@ -2626,7 +2602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8984141642055715323, guid: 71db234a2d8398442b3bfa2e0a07cf41, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2710,6 +2686,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4113770349846283310}
     - target: {fileID: 7024630164404550708, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}
+      propertyPath: leftHand
+      value: 
+      objectReference: {fileID: 7408576675438584424}
+    - target: {fileID: 7024630164404550708, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 4191708607279518003}
+    - target: {fileID: 7024630164404550708, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}
       propertyPath: bodySockets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2782,8 +2766,39 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6114121500588380141, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 426383082414402507}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7024630164404550710, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2537557315130919278}
   m_SourcePrefab: {fileID: 100100000, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}
+--- !u!1 &1299950203665179020 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7024630164404550710, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}
+  m_PrefabInstance: {fileID: 8319879384529591738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &2537557315130919278
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299950203665179020}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.29849592
+  m_Height: 2.820691
+  m_Direction: 1
+  m_Center: {x: -3.353893e-11, y: -0.21435404, z: -0.20150414}
 --- !u!4 &1299950203665179023 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7024630164404550709, guid: b3ea30fe82b97e449a62f5c43e15eb0e, type: 3}

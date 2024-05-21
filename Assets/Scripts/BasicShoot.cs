@@ -22,6 +22,7 @@ public class BasicShoot : MonoBehaviour
     private bool magazineInGun = false;
     public float Chamber = 1f;
     public AudioClip Gunshot;
+    public AudioClip GooHit;
 
     [Header("animation stuff")]
     public Animator anim;
@@ -104,18 +105,16 @@ public class BasicShoot : MonoBehaviour
 
 
         anim.SetTrigger("shoot");
-        anim.ResetTrigger("shoot");
-
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
 
         //Shoots ray to detect damage
         Debug.DrawRay(shootposition.position, forward, Color.green);
-        if (Physics.Raycast(shootposition.position, forward, out RaycastHit hit, float.MaxValue, Enemy))
+        if (Physics.Raycast(shootposition.position, forward, out RaycastHit hit, 1000f, Enemy))
         {
             //gets enemy health script and removes the weaponDMG stat away from it.
             enemyHealth = hit.collider.gameObject.GetComponent<EnemyHealthscript>();
             enemyHealth.health -= playerStats.weaponDMG;
-
+            sM.playsfx(GooHit);
         }
     }
 

@@ -38,10 +38,14 @@ public class PlayerStatusHandler : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Damage")
+        if (other.gameObject.tag == "Damage")
         {
-            EnemyHealthscript EHS = other.GetComponentInParent<EnemyHealthscript>();
-            Health -= EHS.damage;
+            playerDamageHandler PDH = other.gameObject.GetComponent<playerDamageHandler>();
+            Health -= PDH.damage;
+            if (Health <= 0)
+            {
+                Death();
+            }
         }
     }
 
