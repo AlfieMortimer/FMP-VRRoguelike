@@ -23,7 +23,6 @@ public class MagazineCollisionFix : MonoBehaviour
     public void layerExit()
     {
         ammoscript.inGun = false;
-        print(Magazine.tag);
         
     }
     

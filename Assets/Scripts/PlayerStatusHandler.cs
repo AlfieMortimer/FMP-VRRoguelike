@@ -8,8 +8,6 @@ public class PlayerStatusHandler : MonoBehaviour
 {
     public float Health = 100f;
 
-    public GameObject HealthUI;
-    public Image HealthIndicator;
     public Color Healthopacity;
     soundManager SM;
     public Animator Anim;
@@ -17,14 +15,11 @@ public class PlayerStatusHandler : MonoBehaviour
     void Start()
     {
         SM = GameObject.FindWithTag("audiomanager").GetComponent<soundManager>();
-        HealthIndicator = HealthUI.GetComponent<Image>();
+
     }
     // Update is called once per frame
     void Update()
     {
-        Healthopacity.a = (100 - Health) / 100;
-        HealthIndicator.color = Healthopacity;
-
 
         if (Health <= 0)
         {

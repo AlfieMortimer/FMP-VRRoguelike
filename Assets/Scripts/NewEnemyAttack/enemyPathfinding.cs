@@ -11,18 +11,24 @@ public class enemyPathfinding : MonoBehaviour
     bool inRange;
     Rigidbody rb;
     public Animator animator;
+
+    bool canmove = false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
+        Invoke("startdelay", 5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        chasePlayer();
+        if (canmove)
+        {
+            chasePlayer();
+        }
         inRange = Vector3.Distance(transform.position, player.transform.position) <= agent.stoppingDistance;
     }
 
@@ -40,5 +46,10 @@ public class enemyPathfinding : MonoBehaviour
         }
         agent.SetDestination(player.transform.position);
         
+    }
+
+    void startdelay()
+    {
+        canmove = true;
     }
 }

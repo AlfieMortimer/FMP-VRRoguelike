@@ -40,6 +40,11 @@ public class BasicShoot : MonoBehaviour
         playerStats = player.GetComponent<playerStats>();
         sM = GameObject.FindWithTag("audiomanager").GetComponent<soundManager>();
     }
+    private void Update()
+    {
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
+        Debug.DrawRay(shootposition.position, forward, Color.green);
+    }
 
     public void ShootWeapon()
     {
@@ -77,7 +82,6 @@ public class BasicShoot : MonoBehaviour
         {
             ammoscript = enteredMag.transform.GetComponent<ammoCapacity>();
 
-            print(ammoscript.ammoCount);
             weaponAmmo = ammoscript.ammoCount;
             magazineInGun = true;
         }
@@ -107,14 +111,20 @@ public class BasicShoot : MonoBehaviour
         anim.SetTrigger("shoot");
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
 
+
         //Shoots ray to detect damage
         Debug.DrawRay(shootposition.position, forward, Color.green);
-        if (Physics.Raycast(shootposition.position, forward, out RaycastHit hit, 1000f, Enemy))
+        if (Physics.Raycast(shootposition.position, forward, out RaycastHit hit, 100f, Enemy))
         {
+            print(hit.collider.name);
+            print("hitenemy");
             //gets enemy health script and removes the weaponDMG stat away from it.
             enemyHealth = hit.collider.gameObject.GetComponent<EnemyHealthscript>();
-            enemyHealth.health -= playerStats.weaponDMG;
-            sM.playsfx(GooHit);
+            if (enemyHealth != null)
+            {
+                enemyHealth.health -= playerStats.weaponDMG;
+                sM.playsfx(GooHit);
+            }
         }
     }
 

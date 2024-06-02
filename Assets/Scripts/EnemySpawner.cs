@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject handlerOBJ = GameObject.FindWithTag("Handler");
         handler = handlerOBJ.GetComponent<enemyHandler>();
         spawnPos = spawnPosOBJ.transform.position;
-        spawnEnemy();
+
     }
 
     void spawnEnemy()
@@ -29,23 +29,20 @@ public class EnemySpawner : MonoBehaviour
             rand = Random.Range(0, 3);
             if (rand == 0)
             {
-                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-                Instantiate(smallEnemy, spawnPos, Quaternion.identity);
-                print("Small Spawned");
-                handler.enemyCount += 5;
+                Instantiate(mediumEnemy, spawnPos, Quaternion.identity);
+                Instantiate(mediumEnemy, spawnPos, Quaternion.identity);
+                handler.enemyCount += 2;
             }
             else if (rand == 1)
             {
-                print("Medium spawned");
+                Instantiate(mediumEnemy, spawnPos, Quaternion.identity);
+                Instantiate(mediumEnemy, spawnPos, Quaternion.identity);
                 handler.enemyCount += 2;
             }
             else
             {
                 Instantiate(largeEnemy, spawnPos, Quaternion.identity);
-                print("Large Spawned");
+
                 handler.enemyCount += 1;
             }
 
@@ -56,5 +53,9 @@ public class EnemySpawner : MonoBehaviour
     void wait()
     {
         Invoke("spawnEnemy", 15f);
+    }
+    private void OnDestroy()
+    {
+        handler.spawnerCount -= 1;
     }
 }

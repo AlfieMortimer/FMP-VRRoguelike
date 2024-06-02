@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.Processors;
 
 public class EnemyHealthscript : MonoBehaviour
 {
     public float health;
     public float damage;
-    enemyHandler handler;
+    public enemyHandler handler;
     levelManager LM;
+    bool dead = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +22,19 @@ public class EnemyHealthscript : MonoBehaviour
     {
         if (health <= 0)
         {
-            if(LM.objectivetype == 1)
+            if(dead == false)
             {
                 handler.enemyCount--;
+                dead = true;
             }
             //in future play animation which will edit level objectives and then kill itself
-            Destroy(gameObject);
+            Invoke("Death", 0.5f);
         }
+    }
+
+    void Death()
+    {
+        Destroy(gameObject);
     }
 
 

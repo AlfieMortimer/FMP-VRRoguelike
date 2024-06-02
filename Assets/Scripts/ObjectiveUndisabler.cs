@@ -14,10 +14,9 @@ public class ObjectiveUndisabler : MonoBehaviour
     void Start()
     {
         levelManager = GameObject.FindGameObjectWithTag("LevelManager");
-        print(levelManager);
+
         LM = levelManager.GetComponent<levelManager>();
-        print(LM);
-        print(LM.objectivetype);
+ 
         if (LM.objectivetype == 1)
         {
             spawners.SetActive(false);

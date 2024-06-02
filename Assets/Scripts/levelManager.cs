@@ -50,13 +50,13 @@ public class levelManager : MonoBehaviour
             // if instance is null, store a reference to this instance
             instance = this;
             DontDestroyOnLoad(gameObject);
-            print("dont destroy");
+
         }
         else
         {
             // Another instance of this gameobject has been made so destroy it
             // as we already have one
-            print("do destroy");
+
             Destroy(gameObject);
         }
     }
@@ -66,6 +66,7 @@ public class levelManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "LevelBreakRoom" && eH == null || SceneManager.GetActiveScene().name != "Start" && eH == null)
         {
             levelLoaded();
+
         }
 
         if (objectivetype == 3 && zone == null)
@@ -117,6 +118,7 @@ public class levelManager : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Death" || SceneManager.GetActiveScene().name == "Start")
         {
+            objectivetype = 0;
             floornumObj.SetActive(false);
             floornumObj2.SetActive(false);
 

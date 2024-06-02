@@ -27,6 +27,7 @@ public class enemyHandler : MonoBehaviour
         {
             spawnerCount++;
         }
+        spawnerCount /= 2;
     }
 
     // Update is called once per frame
