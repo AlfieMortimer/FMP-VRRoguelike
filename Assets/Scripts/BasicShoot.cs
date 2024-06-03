@@ -109,23 +109,34 @@ public class BasicShoot : MonoBehaviour
 
 
         anim.SetTrigger("shoot");
-        Vector3 forward = transform.TransformDirection(Vector3.forward) * 100;
+        Vector3 forward = transform.TransformDirection(Vector3.forward) * 1000;
 
 
         //Shoots ray to detect damage
         Debug.DrawRay(shootposition.position, forward, Color.green);
-        if (Physics.Raycast(shootposition.position, forward, out RaycastHit hit, 100f, Enemy))
+        if (Physics.Raycast(shootposition.position, forward, out RaycastHit hit, 1000f, Enemy))
         {
             print(hit.collider.name);
             print("hitenemy");
             //gets enemy health script and removes the weaponDMG stat away from it.
             enemyHealth = hit.collider.gameObject.GetComponent<EnemyHealthscript>();
+            if(enemyHealth == null)
+            {
+                enemyHealth = hit.collider.gameObject.GetComponentInParent<EnemyHealthscript>();
+            }
             if (enemyHealth != null)
             {
                 enemyHealth.health -= playerStats.weaponDMG;
                 sM.playsfx(GooHit);
+                enemyHealth = null;
             }
+
         }
+        if (enemyHealth)
+        {
+            print(enemyHealth.name);
+        }
+        
     }
 
 }

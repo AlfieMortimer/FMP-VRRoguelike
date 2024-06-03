@@ -28,7 +28,7 @@ public class EnemyHealthscript : MonoBehaviour
                 dead = true;
             }
             //in future play animation which will edit level objectives and then kill itself
-            Invoke("Death", 0.5f);
+            Invoke("Death", 0.25f);
         }
     }
 

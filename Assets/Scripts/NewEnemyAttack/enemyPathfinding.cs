@@ -42,7 +42,8 @@ public class enemyPathfinding : MonoBehaviour
             this.transform.LookAt(targetPostition);
             agent.velocity = Vector3.zero;
             rb.velocity = new Vector3(0, 0, 0);
-            animator.SetTrigger("Attack");
+
+            //animator.SetTrigger("Attack");
         }
         agent.SetDestination(player.transform.position);
         

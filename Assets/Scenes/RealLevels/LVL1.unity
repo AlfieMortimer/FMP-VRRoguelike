@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17526664, g: 0.21927914, b: 0.30159023, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4772,10 +4772,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 449447487}
     m_Modifications:
-    - target: {fileID: 2324303854647252260, guid: fddea501751c6444485d706df99f0448, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6629758799368622010, guid: fddea501751c6444485d706df99f0448, type: 3}
       propertyPath: m_Name
       value: Krikit (1)
@@ -6439,7 +6435,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 31282
+    surfaceParameter: 31286
     meshQueryIndex: 2
     subMeshQueryIndex: 0
     geometryHashValue: 7000083519497740933
@@ -9818,7 +9814,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 31282
+    surfaceParameter: 31286
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 7231884454181048748
@@ -12174,7 +12170,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 31282
+    surfaceParameter: 31286
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 7231884454181048748
@@ -14926,7 +14922,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 32094
+    surfaceParameter: 32118
     meshQueryIndex: 0
     subMeshQueryIndex: 0
     geometryHashValue: 7231884454181048748
@@ -15041,7 +15037,7 @@ MonoBehaviour:
     meshQuery:
       layers: 16777223
       maskAndChannels: 234881031
-    surfaceParameter: 32094
+    surfaceParameter: 32118
     meshQueryIndex: 1
     subMeshQueryIndex: 0
     geometryHashValue: 7000083519497740933
@@ -19980,7 +19976,7 @@ MonoBehaviour:
     meshQuery:
       layers: 33554440
       maskAndChannels: 8
-    surfaceParameter: 31282
+    surfaceParameter: 31286
     meshQueryIndex: 2
     subMeshQueryIndex: 0
     geometryHashValue: 7000083519497740933
