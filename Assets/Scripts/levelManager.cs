@@ -63,6 +63,16 @@ public class levelManager : MonoBehaviour
 
     void Update()
     {
+        //Remove after debug
+        if (Input.GetKeyDown(KeyCode.Keypad1))
+        {
+            objectivetype = 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Keypad2))
+        {
+            objectivetype = 2;
+        }
+        //Remove after debug
         if (SceneManager.GetActiveScene().name != "LevelBreakRoom" && eH == null || SceneManager.GetActiveScene().name != "Start" && eH == null)
         {
             levelLoaded();

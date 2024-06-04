@@ -20,7 +20,7 @@ public class RandomiseLevel : MonoBehaviour
     public int Stage;
     //stages 1-5 (for now)
 
-    int levelType = 1;
+    int levelType;
     //Type 1 - Defeat Enemies
     //Type 2 - Destroy Spawners
     //Type 3 - Capture Point
@@ -48,8 +48,9 @@ public class RandomiseLevel : MonoBehaviour
         LevelManagerfinder = GameObject.FindGameObjectWithTag("LevelManager");
         LM = LevelManagerfinder.GetComponent<levelManager>();
         Stage = UnityEngine.Random.Range(1, 6);
-        //Broken things so disabled level types as no time :(
-        //levelType = UnityEngine.Random.Range(1, 4);
+       
+        levelType = UnityEngine.Random.Range(1, 3);
+
         Difficulty = UnityEngine.Random.Range(1, 4);
 
         levelNameAndDifficultyText.text = DisplayNames[Stage] + "_" + objectiveNames[levelType];

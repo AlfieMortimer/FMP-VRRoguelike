@@ -10,6 +10,7 @@ public class EnemyHealthscript : MonoBehaviour
     public enemyHandler handler;
     levelManager LM;
     bool dead = false;
+    public bool type;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +25,20 @@ public class EnemyHealthscript : MonoBehaviour
         {
             if(dead == false)
             {
-                handler.enemyCount--;
-                dead = true;
+                if (type)
+                {
+                    handler.enemyCount--;
+                    dead = true;
+                }
+                else
+                {
+                    dead = true;
+                    handler.spawnerCount --;
+
+                }
+                
             }
-            //in future play animation which will edit level objectives and then kill itself
+
             Invoke("Death", 0.25f);
         }
     }

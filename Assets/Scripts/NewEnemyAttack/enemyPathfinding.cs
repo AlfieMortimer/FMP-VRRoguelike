@@ -18,8 +18,9 @@ public class enemyPathfinding : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player");
         agent = GetComponent<NavMeshAgent>();
-        rb = GetComponent<Rigidbody>();
+
         Invoke("startdelay", 5f);
+        
     }
 
     // Update is called once per frame
@@ -41,9 +42,8 @@ public class enemyPathfinding : MonoBehaviour
             player.transform.position.z);
             this.transform.LookAt(targetPostition);
             agent.velocity = Vector3.zero;
-            rb.velocity = new Vector3(0, 0, 0);
 
-            //animator.SetTrigger("Attack");
+            animator.SetTrigger("Attack");
         }
         agent.SetDestination(player.transform.position);
         

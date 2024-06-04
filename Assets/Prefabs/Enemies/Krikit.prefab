@@ -1261,6 +1261,7 @@ MonoBehaviour:
   health: 5
   damage: 5
   handler: {fileID: 0}
+  type: 1
 --- !u!114 &7659420218333787012
 MonoBehaviour:
   m_ObjectHideFlags: 0

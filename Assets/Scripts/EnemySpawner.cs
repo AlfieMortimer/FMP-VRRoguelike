@@ -19,7 +19,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject handlerOBJ = GameObject.FindWithTag("Handler");
         handler = handlerOBJ.GetComponent<enemyHandler>();
         spawnPos = spawnPosOBJ.transform.position;
-
+        wait();
     }
 
     void spawnEnemy()
