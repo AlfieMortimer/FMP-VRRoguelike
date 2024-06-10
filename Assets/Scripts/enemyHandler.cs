@@ -23,7 +23,6 @@ public class enemyHandler : MonoBehaviour
         {
             enemyCount++;
         }
-        Invoke("SearchForSpawners", 0.1f);
         foreach (GameObject spawners in spawners)
         {
             spawnerCount++;
